@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="دعوة عقد قران أشرف ورضا">
+<meta property="og:description" content="الجمعة ١٣ نوفمبر ٢٠٢٦">
+<meta property="og:image" content="garden-bg.jpg">
+</head>
+<body>
+<title>جنينة أشرف ورضا</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Aref+Ruqaa:wght@400;700&display=swap">
+<style>
+/* Layout: 9:16 card. Closed: twin cream gates with pink line-art florals and a rosette clasp. Open: a painted Andalusian garden (arcades, fountain, blossom trees, peonies) with gold text typed over the sky */
+:root {
+  --stage: #f3e6e4;
+  --stage-2: #e8d3d3;
+  --cream: #fbf5e6;
+  --rose-line: #d995ab;
+  --sage-line: #9fb39a;
+  --gold-1: #7a5420;
+  --gold-2: #b98d3c;
+  --gold-3: #efd48f;
+  --ink: #7a4a3a;
+  --f-verse: "Amiri Quran", "Amiri", serif;
+  --f-names: "Aref Ruqaa", "Amiri", serif;
+  --f-body: "Amiri", "Times New Roman", serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(80% 60% at 50% 40%, #fbf2ef, var(--stage) 60%, var(--stage-2));
+  color: var(--ink);
+  font-family: var(--f-body);
+  display: grid; place-items: center;
+  padding-block: 16px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  overflow: hidden;
+}
+.card {
+  position: relative;
+  width: min(100%, 440px, calc((100dvh - 32px) * 9 / 16));
+  aspect-ratio: 9 / 16;
+  container-type: inline-size;
+  perspective: 1800px;
+}
+.inside {
+  position: absolute; inset: 0; overflow: hidden; border-radius: 6px;
+  background: var(--cream);
+  box-shadow: 0 40px 80px -30px rgba(120, 60, 70, .45);
+}
+.scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 60%; display: block; }
+.glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(48% 26% at 50% 31%, rgba(255, 250, 238, .85), rgba(255, 250, 238, 0)); }
+.card.open .scene { animation: settle 7s cubic-bezier(.2, .6, .2, 1) both; }
+@keyframes settle { from { transform: scale(1.14); } to { transform: scale(1); } }
+.grain {
+  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: .7; z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .3 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
+
+.content {
+  position: absolute; z-index: 2; top: 9%; height: 44%; left: 9%; right: 9%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3cqw;
+  text-align: center;
+}
+.verse { margin: 0; font-family: var(--f-verse); font-size: 4.1cqw; line-height: 1.95; color: #8a5530; text-wrap: balance; text-shadow: 0 0 10px #fbf5e6, 0 0 4px #fbf5e6; }
+.names {
+  margin: 0; font-family: var(--f-names); font-weight: 700; font-size: 14cqw; line-height: 1.2;
+  background: linear-gradient(100deg, var(--gold-1), var(--gold-2) 30%, var(--gold-3) 45%, var(--gold-2) 60%, var(--gold-1));
+  background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .8)) drop-shadow(0 0 8px rgba(251, 245, 230, .9));
+  animation: foil 6s linear infinite;
+}
+.names .ghost { -webkit-text-fill-color: transparent; }
+@keyframes foil { from { background-position: 100% 0; } to { background-position: -150% 0; } }
+.date { margin: 0; font-weight: 700; font-size: 4.6cqw; color: #7a4a3a; display: flex; align-items: center; gap: 3cqw; text-shadow: 0 0 8px #fbf5e6; }
+.date::before, .date::after { content: ""; width: 8cqw; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-2)); }
+.date::after { transform: scaleX(-1); }
+.ghost { color: transparent; text-shadow: none; }
+
+.door { position: absolute; top: 0; bottom: 0; width: 50%; overflow: hidden; z-index: 4; transition: transform 2.2s cubic-bezier(.65, 0, .25, 1), filter 2.2s; backface-visibility: hidden; }
+.door svg { position: absolute; top: 0; height: 100%; width: 200%; }
+.door.l { left: 0; transform-origin: left center; border-radius: 6px 0 0 6px; }
+.door.r { right: 0; transform-origin: right center; border-radius: 0 6px 6px 0; }
+.door.r svg { left: -100%; }
+.door.l::after, .door.r::after { content: ""; position: absolute; top: 0; bottom: 0; width: 14px; }
+.door.l::after { right: 0; background: linear-gradient(90deg, transparent, rgba(150, 100, 90, .18)); }
+.door.r::after { left: 0; background: linear-gradient(-90deg, transparent, rgba(150, 100, 90, .18)); }
+.card.open .door.l { transform: rotateY(-112deg); filter: brightness(.85); }
+.card.open .door.r { transform: rotateY(112deg); filter: brightness(.85); }
+.card.gone .door { visibility: hidden; }
+
+.clasp {
+  position: absolute; z-index: 5; left: 50%; top: 50%; translate: -50% -50%;
+  width: 24cqw; aspect-ratio: 1; padding: 0; border: 0; background: none; cursor: pointer;
+  filter: drop-shadow(0 4px 6px rgba(150, 80, 100, .3));
+  transition: transform .8s, opacity .8s;
+  animation: breathe 2.6s ease-in-out infinite;
+}
+.clasp svg { width: 100%; height: 100%; display: block; }
+.clasp:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 6px; border-radius: 50%; }
+@keyframes breathe { 0%, 100% { scale: 1; } 50% { scale: 1.06; } }
+.card.open .clasp { transform: rotate(90deg) scale(.4); opacity: 0; pointer-events: none; animation: none; }
+
+.water { stroke-dasharray: 3 5; animation: flow 1.2s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -16; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .door, .clasp { transition: none; }
+  .clasp, .names, .water, .card.open .scene { animation: none; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="paint" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation=".4"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7ecd2"/><stop offset=".35" stop-color="#fbf4e3"/><stop offset=".6" stop-color="#f6e6e0"/><stop offset="1" stop-color="#efe6d4"/>
+    </linearGradient>
+    <radialGradient id="textGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fffaf0" stop-opacity=".9"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7a5420"/><stop offset=".35" stop-color="#c9a24f"/><stop offset=".5" stop-color="#f3dea0"/><stop offset=".7" stop-color="#b98d3c"/><stop offset="1" stop-color="#7a5420"/>
+    </linearGradient>
+    <linearGradient id="wallL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9d39c"/><stop offset="1" stop-color="#f6e9c6"/></linearGradient>
+    <linearGradient id="wallR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#e9d39c"/><stop offset="1" stop-color="#f6e9c6"/></linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ece6cf"/><stop offset="1" stop-color="#dfe3cc"/></linearGradient>
+    <linearGradient id="pathG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf6ea"/><stop offset="1" stop-color="#f3ead6"/></linearGradient>
+    <linearGradient id="pk0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbd9e4"/><stop offset="1" stop-color="#e48aa8"/></linearGradient>
+    <linearGradient id="pk1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6bcd0"/><stop offset="1" stop-color="#d4628c"/></linearGradient>
+    <linearGradient id="pk2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ee9ab6"/><stop offset="1" stop-color="#b8406e"/></linearGradient>
+    <linearGradient id="pk3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dd6f95"/><stop offset="1" stop-color="#8e2352"/></linearGradient>
+    <linearGradient id="hib" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8a8c8"/><stop offset=".6" stop-color="#e2558f"/><stop offset="1" stop-color="#9c1450"/></linearGradient>
+    <linearGradient id="lf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6f9a76"/><stop offset="1" stop-color="#244c3e"/></linearGradient>
+    <linearGradient id="hedge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c9b3"/><stop offset="1" stop-color="#8ea88f"/></linearGradient>
+    <linearGradient id="waterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8f0ee"/><stop offset="1" stop-color="#cfdcd8"/></linearGradient>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r=".9" fill="#e6b2c2" fill-opacity=".55"/></pattern>
+    <symbol id="ros" viewBox="-20 -20 40 40">
+      <g fill="#e39ab3">
+        <rect x="-9" y="-9" width="18" height="18" fill-opacity=".35"/><rect x="-9" y="-9" width="18" height="18" transform="rotate(45)" fill-opacity=".35"/>
+        <path d="M0-19L3-12 0-9-3-12ZM0 19L3 12 0 9-3 12ZM19 0L12 3 9 0 12-3ZM-19 0L-12 3-9 0-12-3Z"/>
+        <path d="M13-13L8-6 6-8ZM-13 13L-8 6-6 8ZM13 13L6 8 8 6ZM-13-13L-6-8-8-6Z" fill-opacity=".8"/>
+        <rect x="-4" y="-4" width="8" height="8" transform="rotate(45)" fill="#d6789a"/>
+        <circle r="1.6" fill="#fbf5e6"/>
+      </g>
+    </symbol>
+    <symbol id="zig" viewBox="0 0 8 26"><path d="M1 1l5 4-5 4 5 4-5 4 5 4-5 4" fill="none" stroke="#9fb39a" stroke-width="1.1"/></symbol>
+  </defs>
+</svg>
+
+<div class="card" id="card" dir="rtl" lang="ar">
+  <div class="inside">
+    <img class="scene" src="garden-bg.jpg" alt="" decoding="async">
+    <div class="glow"></div>
+    <div class="grain"></div>
+    <div class="content">
+      <p class="verse" data-text="﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً﴾"></p>
+      <h1 class="names" data-text="أشرف و رضا"></h1>
+      <p class="date" data-text="الجمعة ١٣ نوفمبر ٢٠٢٦"></p>
+    </div>
+    <canvas class="fx" id="fx"></canvas>
+  </div>
+
+  <div class="door l"><svg viewBox="0 0 360 640" class="dv" aria-hidden="true"></svg><div class="grain"></div></div>
+  <div class="door r"><svg viewBox="0 0 360 640" class="dv" aria-hidden="true"></svg><div class="grain"></div></div>
+  <button class="clasp" id="clasp" aria-label="افتح الدعوة">
+    <svg viewBox="-50 -50 100 100" aria-hidden="true">
+      <circle r="46" fill="#fbf5e6" stroke="#9fb39a" stroke-width="1.4"/>
+      <circle r="41" fill="none" stroke="#9fb39a" stroke-width=".6"/>
+      <use href="#ros" x="-34" y="-34" width="68" height="68"/>
+      <circle r="46" fill="none" stroke="url(#gold)" stroke-width=".8" stroke-dasharray="2 3"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let seed = 5;
+const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+const R = (a, b) => a + rnd() * (b - a);
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const petalD = (w, h) => `M0 0C${-w} ${-h * .3} ${-w * .9} ${-h} 0 ${-h}C${w * .9} ${-h} ${w} ${-h * .3} 0 0Z`;
+
+// ورد
+function peony(g, x, y, r) {
+  const p = el("g", { transform: `translate(${x} ${y}) rotate(${R(0, 360)})` }, g);
+  for (let L = 0; L < 4; L++) {
+    const n = 8 - L, rr = r * (1 - L * .22);
+    for (let i = 0; i < n; i++) el("path", { d: petalD(rr * .55, rr), fill: `url(#pk${L})`, opacity: .92, transform: `rotate(${i * 360 / n + L * 23})` }, p);
+  }
+  el("circle", { r: r * .12, fill: "#f2c15d" }, p);
+}
+function hibiscus(g, x, y, r, rot) {
+  const p = el("g", { transform: `translate(${x} ${y}) rotate(${rot})` }, g);
+  for (let i = 0; i < 5; i++) {
+    el("path", { d: petalD(r * .8, r), fill: "url(#hib)", transform: `rotate(${i * 72})` }, p);
+    el("path", { d: `M0 0Q${r * .08} ${-r * .5} 0 ${-r * .85}`, fill: "none", stroke: "#a3205a", "stroke-width": .4, opacity: .6, transform: `rotate(${i * 72})` }, p);
+  }
+  el("circle", { r: r * .16, fill: "#7a0f3a" }, p);
+  el("path", { d: `M0 0Q${r * .2} ${-r * .4} ${r * .1} ${-r * .75}`, fill: "none", stroke: "#f2d27a", "stroke-width": 1.2 }, p);
+  for (let i = 0; i < 5; i++) el("circle", { cx: r * .1 + R(-2, 2), cy: -r * .75 + R(-2, 2), r: .9, fill: "#f6d36b" }, p);
+}
+function leaf(g, x, y, ang, s, fill = "url(#lf)") {
+  const p = el("g", { transform: `translate(${x} ${y}) rotate(${ang}) scale(${s})` }, g);
+  el("path", { d: "M0 0C6-7 18-8 28 0C18 8 6 7 0 0Z", fill }, p);
+  el("path", { d: "M1 0H26", stroke: "#1d3d30", "stroke-width": .5, opacity: .5 }, p);
+}
+function bush(g, x, y, r, cols, n = 26) {
+  for (let i = 0; i < n; i++) {
+    const a = R(0, 6.28), d = Math.sqrt(rnd()) * r;
+    el("circle", { cx: x + Math.cos(a) * d, cy: y + Math.sin(a) * d * .75, r: R(r * .16, r * .32), fill: cols[i % cols.length], opacity: R(.55, .9) }, g);
+  }
+}
+function lineFlower(g, x, y, r, ang) {
+  const p = el("g", { transform: `translate(${x} ${y}) rotate(${ang})`, fill: "none", stroke: "#d995ab", "stroke-width": .8, "stroke-linecap": "round" }, g);
+  el("path", { d: `M0 ${r * .2}C${r * .1} ${r} ${-r * .3} ${r * 1.6} ${r * .1} ${r * 2.4}` }, p);
+  for (let L = 0; L < 3; L++) {
+    const n = 6 - L, rr = r * (1 - L * .28);
+    for (let i = 0; i < n; i++) el("path", { d: petalD(rr * .5, rr), transform: `rotate(${-80 + i * 160 / (n - 1)})` }, p);
+  }
+  for (const s of [-1, 1]) el("path", { d: `M0 ${r * 1.2}C${s * r * .5} ${r * .9} ${s * r * .9} ${r * 1.1} ${s * r * 1.1} ${r * 1.5}C${s * r * .7} ${r * 1.6} ${s * r * .3} ${r * 1.5} 0 ${r * 1.2}` }, p);
+}
+
+// البابين
+const doorArt = `
+  <rect width="360" height="640" fill="#fbf5e6"/>
+  <rect width="360" height="640" fill="url(#dots)"/>
+  <g class="lf"></g>
+  <g fill="none" stroke="#9fb39a">
+    <path d="M18 18H170V250C170 272 146 284 146 320C146 356 170 368 170 390V622H18Z" stroke-width="1.6"/>
+    <path d="M24 24H164V248C164 266 140 280 140 320C140 360 164 374 164 392V616H24Z" stroke-width=".6"/>
+    <path d="M342 18H190V250C190 272 214 284 214 320C214 356 190 368 190 390V622H342Z" stroke-width="1.6"/>
+    <path d="M336 24H196V248C196 266 220 280 220 320C220 360 196 374 196 392V616H336Z" stroke-width=".6"/>
+  </g>
+  <g class="mo"></g>
+  <text x="180" y="404" text-anchor="middle" font-family="Amiri, serif" font-size="12" fill="#8fa58a">اضغط لفتح الدعوة</text>`;
+document.querySelectorAll(".dv").forEach(svg => {
+  svg.innerHTML = doorArt;
+  seed = 13;
+  const lf = svg.querySelector(".lf"), mo = svg.querySelector(".mo");
+  for (const [x, y, r, a] of [[30, 90, 16, 20], [44, 230, 13, -10], [28, 380, 15, 15], [46, 520, 14, -15], [330, 140, 15, -20], [316, 290, 13, 10], [332, 440, 16, -15], [318, 580, 13, 10], [110, 600, 12, 0], [250, 60, 12, 180]]) lineFlower(lf, x, y, r, a);
+  for (const [x, y, s] of [[95, 140, 15], [265, 200, 15], [90, 470, 13], [270, 500, 14], [130, 300, 9], [230, 380, 9], [60, 300, 8], [300, 360, 8], [120, 60, 8], [240, 580, 9]])
+    el("use", { href: "#ros", x: x - s, y: y - s, width: s * 2, height: s * 2 }, mo);
+  for (const [x, y] of [[80, 240], [280, 110], [70, 560], [292, 420], [150, 190], [210, 470]]) el("use", { href: "#zig", x, y, width: 8, height: 26 }, mo);
+});
+
+// الكتابة حرف حرف
+const seg = typeof Intl !== "undefined" && Intl.Segmenter ? new Intl.Segmenter("ar", { granularity: "grapheme" }) : null;
+const chars = s => seg ? Array.from(seg.segment(s), x => x.segment) : Array.from(s);
+const lines = [...document.querySelectorAll("[data-text]")];
+lines.forEach(n => { const t = document.createElement("span"), gh = document.createElement("span"); gh.className = "ghost"; gh.textContent = n.dataset.text; n.append(t, gh); });
+const wait = ms => new Promise(r => setTimeout(r, ms));
+function type(n, speed) {
+  return new Promise(done => {
+    const all = chars(n.dataset.text), [t, gh] = n.children; let i = 0;
+    (function step() {
+      i++; t.textContent = all.slice(0, i).join(""); gh.textContent = all.slice(i).join("");
+      if (i < all.length) setTimeout(step, speed); else done();
+    })();
+  });
+}
+
+// بتلات وبريق
+function startFx() {
+  if (reduce) return;
+  const c = document.getElementById("fx"), x = c.getContext("2d");
+  let W, H;
+  const size = () => { const r = devicePixelRatio || 1; W = c.clientWidth; H = c.clientHeight; c.width = W * r; c.height = H * r; x.setTransform(r, 0, 0, r, 0, 0); };
+  size(); addEventListener("resize", size);
+  const fall = top => ({ x: Math.random() * W, y: top ? -12 : Math.random() * H * .5, s: 3 + Math.random() * 4, vy: .3 + Math.random() * .5, a: Math.random() * 6.3, va: (Math.random() - .5) * .04, ph: Math.random() * 6.3, col: ["#f2b6c9", "#e98fb0", "#f7d0dc"][Math.random() * 3 | 0] });
+  const F = Array.from({ length: 16 }, () => fall(false));
+  const T = Array.from({ length: 22 }, () => ({ x: Math.random() * W, y: Math.random() * H * .7, ph: Math.random() * 6.3, r: .7 + Math.random() * 1.4 }));
+  (function f(t) {
+    x.clearRect(0, 0, W, H);
+    for (const s of T) {
+      const al = Math.max(0, Math.sin(t / 650 + s.ph)) * .8, r = s.r;
+      x.globalAlpha = al; x.fillStyle = "#e8c470"; x.beginPath();
+      x.moveTo(s.x, s.y - r * 3); x.lineTo(s.x + r * .5, s.y - r * .5); x.lineTo(s.x + r * 3, s.y); x.lineTo(s.x + r * .5, s.y + r * .5);
+      x.lineTo(s.x, s.y + r * 3); x.lineTo(s.x - r * .5, s.y + r * .5); x.lineTo(s.x - r * 3, s.y); x.lineTo(s.x - r * .5, s.y - r * .5); x.fill();
+    }
+    for (const p of F) {
+      p.y += p.vy; p.a += p.va; p.x += Math.sin(t / 1300 + p.ph) * .55;
+      if (p.y > H + 12) Object.assign(p, fall(true));
+      x.save(); x.translate(p.x, p.y); x.rotate(p.a); x.scale(1, .45 + .55 * Math.abs(Math.sin(t / 800 + p.ph)));
+      x.globalAlpha = .85; x.fillStyle = p.col; x.beginPath();
+      x.moveTo(0, -p.s); x.bezierCurveTo(p.s, -p.s * .6, p.s * .8, p.s, 0, p.s); x.bezierCurveTo(-p.s * .8, p.s, -p.s, -p.s * .6, 0, -p.s); x.fill(); x.restore();
+    }
+    requestAnimationFrame(f);
+  })(0);
+}
+
+const card = document.getElementById("card");
+document.getElementById("clasp").addEventListener("click", async () => {
+  if (card.classList.contains("open")) return;
+  card.classList.add("open");
+  if (reduce) { lines.forEach(n => n.textContent = n.dataset.text); card.classList.add("gone"); return; }
+  setTimeout(startFx, 800);
+  setTimeout(() => card.classList.add("gone"), 2300);
+  await wait(2000);
+  await type(lines[0], 42);
+  await wait(400);
+  await type(lines[1], 120);
+  await wait(300);
+  await type(lines[2], 65);
+});
+</script>
+
+</body>
+</html>
