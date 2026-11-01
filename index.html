@@ -74,10 +74,12 @@ body {
 .names {
   margin: 0; font-family: "Bodoni Moda", "Didot", "Times New Roman", serif; font-style: italic; font-weight: 500; font-size: 12cqw; line-height: 1.15;
   padding-inline: .25em;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .8)) drop-shadow(0 0 8px rgba(251, 245, 230, .9));
+}
+.names > span:first-child {
   background: linear-gradient(100deg, var(--gold-1), var(--gold-2) 30%, var(--gold-3) 45%, var(--gold-2) 60%, var(--gold-1));
   background-size: 250% 100%;
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .8)) drop-shadow(0 0 8px rgba(251, 245, 230, .9));
   animation: foil 6s linear infinite;
 }
 .names .ghost { -webkit-text-fill-color: transparent; }
