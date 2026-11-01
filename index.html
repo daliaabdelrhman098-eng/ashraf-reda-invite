@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta property="og:title" content="دعوة عقد قران أشرف ورضا">
+<meta property="og:title" content="Ashraf & Reda · عقد قران">
 <meta property="og:description" content="الجمعة ١٣ نوفمبر ٢٠٢٦">
 <meta property="og:image" content="garden-bg.jpg">
 </head>
@@ -12,7 +12,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Aref+Ruqaa:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Amiri+Quran&family=Aref+Ruqaa:wght@400;700&family=Great+Vibes&display=swap">
 <style>
 /* Layout: 9:16 card. Closed: twin cream gates with pink line-art florals and a rosette clasp. Open: a painted Andalusian garden (arcades, fountain, blossom trees, peonies) with gold text typed over the sky */
 :root {
@@ -56,7 +56,7 @@ body {
   box-shadow: 0 40px 80px -30px rgba(120, 60, 70, .45);
 }
 .scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 60%; display: block; }
-.glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(48% 26% at 50% 31%, rgba(255, 250, 238, .85), rgba(255, 250, 238, 0)); }
+.glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(50% 27% at 50% 39%, rgba(255, 250, 238, .85), rgba(255, 250, 238, 0)); }
 .card.open .scene { animation: settle 7s cubic-bezier(.2, .6, .2, 1) both; }
 @keyframes settle { from { transform: scale(1.14); } to { transform: scale(1); } }
 .grain {
@@ -66,13 +66,14 @@ body {
 .fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
 
 .content {
-  position: absolute; z-index: 2; top: 9%; height: 44%; left: 9%; right: 9%;
+  position: absolute; z-index: 2; top: 17%; height: 44%; left: 9%; right: 9%;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3cqw;
   text-align: center;
 }
 .verse { margin: 0; font-family: var(--f-verse); font-size: 4.1cqw; line-height: 1.95; color: #8a5530; text-wrap: balance; text-shadow: 0 0 10px #fbf5e6, 0 0 4px #fbf5e6; }
 .names {
-  margin: 0; font-family: var(--f-names); font-weight: 700; font-size: 14cqw; line-height: 1.2;
+  margin: 0; font-family: "Great Vibes", "Segoe Script", cursive; font-weight: 400; font-size: 15cqw; line-height: 1.15;
+  padding-inline: .25em;
   background: linear-gradient(100deg, var(--gold-1), var(--gold-2) 30%, var(--gold-3) 45%, var(--gold-2) 60%, var(--gold-1));
   background-size: 250% 100%;
   -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -167,7 +168,7 @@ body {
     <div class="grain"></div>
     <div class="content">
       <p class="verse" data-text="﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً﴾"></p>
-      <h1 class="names" data-text="أشرف و رضا"></h1>
+      <h1 class="names" dir="ltr" lang="en" data-text="Ashraf & Reda"></h1>
       <p class="date" data-text="الجمعة ١٣ نوفمبر ٢٠٢٦"></p>
     </div>
     <canvas class="fx" id="fx"></canvas>
